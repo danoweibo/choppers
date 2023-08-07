@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+#dashboard_main {
+    display: none;
+}
+
+.sleek-input {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color:black;
+}
+
+#cashbar {
+    
+}
+
+#left-ctrl {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 100000;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+#right-ctrl {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 100000;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none; 
+    user-select: none;
+}
+
+
+#dashboard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    background: #6d6b6b;
+    transition: 0.5s;
+    z-index: 100000;
+    overflow-y: auto;
+}
+
+#receipt {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    background: rgb(47, 52, 142);;
+    transition: 0.5s;
+    z-index: 100000;
+    overflow-y: auto;
+}
+
+
+
+#left-ctrl:checked ~ #dashboard {
+    left: -100%;
+}
+
+#right-ctrl:checked ~ #receipt {
+    right: -100%;
+}
+
+
+#success {
+    position: absolute;
+    right: 100%;
+    transition: 0.5s;
+}
+
+#left-ctrl:checked ~ #success {
+    left: 0;
+}
+
+#right-ctrl:checked ~ #success {
+    right: 0;
+}
+
+#success h2 {
+    font-size: 36px;
+}
+
+/* Transaction successful */
+.circle {
+    border: 0px solid;
+    border-radius: 50%;
+    background-color: rgb(47, 52, 142);
+}
+
+.btnView {
+    background-color: rgb(47, 52, 142);
+}
+
+.btnView:active {
+    box-shadow: 0 0px #666;
+    opacity: 0.5;
+    border-radius: 9999px;
+
+}
+
+/* Receipt */
+.btnValid-8 {
+    color: rgb(47, 52, 142);;
+}
+
+.btnValid-8:active {
+    opacity: 0.5;
+
+}
+
+.tx-box {
+    background-color:white;
+    height: 28.500rem;
+}
+
+.tx-cost {
+    color: rgb(47, 52, 142);
+}
+
+#ios-box {
+    width: 16.875rem;
+    background-color: rgb(247, 247, 247);
+}
+
+.ios-fnt {
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.05px;
+}
+
+#ios-ok {
+    width: 16.875rem;
+}
+
+.ios-line {
+    
+}
+
+.bal-card {
+    background-image: url('feeding.png');
+}

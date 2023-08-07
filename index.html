@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="ispinner.css">
+    <link rel="stylesheet" href="tailwind.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script>
+
+      let showBal = document.getElementById('usrBal');
+
+    </script>
+</head>
+<body>
+    <div id="root">
+        <input id="left-ctrl" type="checkbox" name="" checked="checked" disabled>
+        <span class="icon-l"></span>
+
+        <input id="right-ctrl" type="checkbox" name="" checked="checked" disabled>
+        <span class="icon-r"></span>
+        
+
+        <div id="dashboard" class="">
+
+        </div>
+
+        <div id="receipt" class="">
+            <div id="scaffold" class="h-screen flex flex-col">
+                <div class="flex-1 flex items-center h-full justify-center">
+                    <div class="tx-box p-4 bg-white w-full ml-5 mr-5" style="border-radius: 10px">
+                      <h1 class="text-lg font-medium text-center mb-3 pt-1 ">Transaction Details</h1>
+                      <hr class="tx-box-line" style="outline-width: 0.1px; background-color: rgb(72, 72, 72);">
+                    <div class="pt-6">
+                        <h6 class="font-semibold text-sm" id="transaction-id">Transaction ID</h6>
+                    <p id="txid" class="font-medium text-sm pt-0.5"></p>
+    
+                    <h6 class="font-semibold text-sm pt-4" id="transaction-date">Transaction Date</h6>
+                    <p id="date" class="font-medium text-sm pt-0.5"></p>
+    
+                    <h6 class="font-semibold text-sm pt-4" id="transaction-status">Transaction Status</h6>
+                    <p id="status" class="font-medium text-sm pt-0.5">Success</p>
+    
+                    <h6 class="font-semibold text-sm pt-4" id="to">To</h6>
+                    <p id="venue" class="font-medium text-base pt-0.5"></p>
+    
+                    <div class="pt-4">
+                        <h6 class="font-semibold text-sm pt-0.5" id="amount">Amount</h6>
+                        <p id="cost" class="tx-cost font-bold text-xl"></p>
+                    </div>
+                    </div>
+                    </div>
+                  </div>
+                  <footer>
+                    <div class="text-center ml-5 mr-5 mb-8">
+                        <button id="vbtn" 
+                                class="btnValid-8 bg-white text-lg font-medium rounded-full h-14 w-full p-4">
+                            Validate
+                            
+                        </button>
+                    </div>
+                  </footer> 
+            </div>
+    
+            <div class="">
+                <div id="ios-box" class="rounded-2xl h-32 absolute top-5 left-0 right-0 bottom-1 m-auto" style="visibility: hidden;">
+                    <div class="text-center pt-5">
+                        <h4 class="ios-fnt font-semibold">Success</h4>
+                        <p class="text-sm ios-fnt pt-0.5">The transaction receipt is valid.</p>
+                    </div>
+                    <hr class="mt-4 ios-line">
+                    <div class="flex justify-center">
+                        <button id="ios-ok" class="pt-2 h-8 ios-fnt font-medium text-lg" style="color: rgb(18, 171, 198);">Ok</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div id="success">
+            <div id="butler" class="h-screen">
+
+              <div class="flex justify-end pb-1 pt-16"><img src="Receipt.svg" class="sticky h-20"></div>
+
+                <div class="bg-white p-6 rounded-t-3xl">
+
+                  <div class="mb-6">
+                    <label class="block text-black-700 font-bold text-xl mb-2 pt-1">Display Name</label>
+                    <input id="displayName" class="text-lg sleek-input w-full" type="text" placeholder="Enter the amount">
+                </div>
+
+                <div class="mb-6">
+                  <label class="block text-black-700 font-bold text-xl mb-2 pt-1">Generate Balance</label>
+                  <div class="flex">
+                    <input id="customBal" class="text-lg sleek-input w-full" type="number" min="10" max="5000" placeholder="Enter the amount">
+                      <button id="shuffleBal">
+                        <img src="Arrow.svg" class="h-6 pr-2" alt="shuffleIcon">
+                      </button>
+                  </div>
+              </div>
+
+                <div class="mb-4">
+                    <label class="block text-black-700 font-bold text-xl mb-2 pb-1">Restaurant</label>
+                    <select class="text-lg sleek-input w-full" name="cars" id="cafes">
+                        <option value="Cresta">Cresta</option>
+                        <option value="Tasty Vine Kitchen">Tasty Vine Kitchen</option>
+                        <option value="Your Choice Kitchen">Your Choice Kitchen</option>
+                        <option value="Tasty Delight">Tasty Delight</option>
+                        <option value="Burger & Bread">Burger & Bread</option>
+                        <option value="Marigold Kitchen">Marigold Kitchen</option>
+                        <option value="Marigold Kitchen">Main Royal Cafeteria</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-black-700 font-bold text-xl mb-2 pt-1">Amount</label>
+                    <input id="cashbar" class="text-lg sleek-input w-full" type="number" min="10" max="5000" placeholder="Enter the amount">
+                </div>
+
+                <div class="flex justify-around pt-7">
+                  
+                    <button id="clrFormBtn" class="bg-white hover:bg-red-700 text-red-700 hover:text-white border-2 border-red-700 text-md font-medium py-2 px-4 rounded-full">
+                      <div class="flex">
+                        <img src="Eraser.svg" class="h-5 pr-2" alt="clearIcon">
+                        Clear Request
+                      </div>
+                    </button>
+
+                    <button id="waiterBtn" class="bg-white hover:border-green-700 text-black border-2 border-black hover:text-green-700 text-md font-medium py-2 px-4 rounded-full">
+                      <div class="flex">
+                        <img src="Edit.svg" class="h-5 pr-2" alt="clearIcon">
+                        Create Receipt
+                      </div>
+                  </button>
+                </div>
+
+            </div>
+          </div>
+
+            <div id="success_main" class="bg-transparent h-screen flex flex-col">
+                <div class="flex-1 flex items-center h-full justify-center">
+                    <div class="pt-20">
+                        <div class="flex justify-center pb-14">
+                            <div class="circle flex justify-center items-center h-36 w-36">
+                                <img class="h-24" src="tick.svg">
+                            </div>
+                        </div>
+    
+                        <p class="text-black text-center text-xl pb-1">Transaction Successful</p>
+                    </div>
+                  </div>
+                  <footer>
+                    <div class="text-center ml-5 mr-5 mb-11">
+                        <button id="btnIntent" 
+                                class="btnView text-white text-base font-medium rounded-full h-14 w-full p-4">View Receipt</button>
+                    </div>
+                  </footer>
+            </div>
+
+            <!-- BALANCE -->
+            <div id="dashboard_main">
+                <header class="bg-white p-4 sticky flex justify-start items-center">
+                    <img class="rounded-full" style="width: 3rem" src="user.png" alt="usr">
+                    <h1 id="displayNameOBJ" class="text-2xl pl-3">Jacob Fagbemi</h1>
+                  </header>
+        
+                  <main class="pl-4 pr-4 pb-4">
+                    <div class="bal-card p-4 rounded-md h-32">
+                      <div class="flex justify-center items-center pt-3">
+                        <h5 class="text-white">Feeding Balance</h5>
+                      </div>
+                        <h3 id="usrBal" class="cash text-white text-3xl font-bold text-center pt-2">&#8358;6,080.00</h3>
+                    </div>
+                  
+                    <section class="pt-4 pb-4">
+                      <div class="">
+                        <h5>Available Restaurants</h5>
+                      </div>
+                    </section>
+        
+                    <section class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                      <!-- CAFE -->
+                      <div class="bg-gray-100 p-4 rounded-md">
+                        <div class="flex justify-center items-center pt-3 pb-2">
+                          <img class="rounded-full" style="width: 2.5rem;" src="cafe.svg" alt="cafe">
+                        </div>
+                        <p class="text-sm text-center pb-5">Your Choice Kitchen</p>
+                      </div>
+        
+                      <!-- CAFE -->
+                      <div class="bg-gray-100 p-4 rounded-md">
+                        <div class="flex justify-center items-center pt-3 pb-2">
+                          <img class="rounded-full" style="width: 2.5rem;" src="cafe.svg" alt="cafe">
+                        </div>
+                        <p class="text-sm text-center pb-5">Tasty Vine Kitchen</p>
+                      </div>
+        
+                      <!-- CAFE -->
+                      <div class="bg-gray-100 p-4 rounded-md">
+                        <div class="flex justify-center items-center pt-3 pb-2">
+                          <img class="rounded-full" style="width: 2.5rem;" src="cafe.svg" alt="cafe">
+                        </div>
+                        <p class="text-sm text-center pb-5">Cresta</p>
+                      </div>
+        
+                      <!-- CAFE -->
+                      <div class="bg-gray-100 p-4 rounded-md">
+                        <div class="flex justify-center items-center pt-3 pb-2">
+                          <img class="rounded-full" style="width: 2.5rem;" src="cafe.svg" alt="cafe">
+                        </div>
+                        <p class="text-sm text-center pb-5">Marigold Kitchen</p>
+                      </div>
+        
+                      <!-- CAFE -->
+                      <div class="bg-gray-100 p-4 rounded-md">
+                        <div class="flex justify-center items-center pt-3 pb-2">
+                          <img class="rounded-full" style="width: 2.5rem;" src="cafe.svg" alt="cafe">
+                        </div>
+                        <p class="text-sm text-center pb-5">Tasty Delight</p>
+                      </div>
+        
+                      <!-- CAFE -->
+                      <div class="bg-gray-100 p-4 rounded-md">
+                        <div class="flex justify-center items-center pt-3 pb-2">
+                          <img class="rounded-full" style="width: 2.5rem;" src="cafe.svg" alt="cafe">
+                        </div>
+                        <p class="text-sm text-center pb-5">Burger & Bread</p>
+                      </div>
+        
+                      <!-- CAFE -->
+                      <div class="bg-gray-100 p-4 rounded-md">
+                        <div class="flex justify-center items-center pt-3 pb-2">
+                          <img class="rounded-full" style="width: 2.5rem;" src="cafe.svg" alt="cafe">
+                        </div>
+                        <p class="text-sm text-center pb-5">Main Royal Cafeteria</p>
+                      </div>
+                    </section>
+                  </main>
+                  <footer class="bg-white fixed w-full bottom-0 border-t border-black-100">
+                    <nav class="flex space-x-20 justify-center items-center">
+                      <a class="text-gray-800 text-sm p-3" href="#">
+                        <button>
+                          <img class="" style="width: 1.5rem;" src="layout.svg" alt="">
+                        </button>
+                      </a>
+        
+                      <a class="text-gray-800 text-sm p-3" href="#">
+                        <button>
+                          <img class="" style="width: 1.5rem;" src="inbox.svg" alt="">
+                        </button>
+                      </a>
+        
+                      <a class="text-gray-800 text-sm p-3" href="#">
+                        <button>
+                          <img class="" style="width: 1.5rem;" src="profile.svg" alt="">
+                        </button>
+                      </a>
+                    </nav>
+                  </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="butler.js"></script>
+    <script src="receipt.js"></script>
+    <script src="react.js"></script>
+</body> 
+</html>
